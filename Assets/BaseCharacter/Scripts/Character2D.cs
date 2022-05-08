@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Character2D : MonoBehaviour
 {    
@@ -20,7 +21,12 @@ public class Character2D : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheck");        
     }
-    
+
+    private void Update()
+    {
+        Move(maxSpeed, Input.GetKeyDown(KeyCode.Mouse0));
+    }
+
     public void Move(float speed, bool jump) {
         if (speed > 0) transform.localScale = new Vector3(1, 1, 1);
         else if (speed < 0) transform.localScale = new Vector3(-1, 1, 1);
@@ -48,8 +54,8 @@ public class Character2D : MonoBehaviour
         animator.SetFloat("ySpeed", rigidbody.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("111" + collision.collider.gameObject.name);
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log("111" + collision.collider.gameObject.name);
+    //}
 }
