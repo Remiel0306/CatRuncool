@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,18 +14,20 @@ public class Character2D : MonoBehaviour
     
     Animator animator;
     Rigidbody2D rigidbody;
-    Transform groundCheck;    
+    Transform groundCheck;
+    //const string Hide = "hide";
     // Start is called before the first frame update
     void Start()
     {        
         animator = GetComponent<Animator>();        
         rigidbody = GetComponent<Rigidbody2D>();
-        groundCheck = transform.Find("GroundCheck");        
+        groundCheck = transform.Find("GroundCheck");
     }
 
     private void Update()
     {
         Move(maxSpeed, Input.GetKeyDown(KeyCode.Mouse0));
+        MouseButton();
     }
 
     public void Move(float speed, bool jump) {
@@ -54,7 +57,35 @@ public class Character2D : MonoBehaviour
         animator.SetFloat("ySpeed", rigidbody.velocity.y);
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
+    bool hide = false;
+
+    public void MouseButton()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            hide = true;
+            print("<color=yellow>1.Click</color>");
+            //animator.Play("Hide");
+        }
+
+        else if (Input.GetMouseButtonUp(1))
+        {
+            hide= false;
+            print("<color=red>2.Click</color>");
+            //animator.Play("Hide");
+        }
+         
+    }
+
+    //void ChangeAnimationState(string newState)
+    //{
+    //    if (hide == true)
+    //    {
+    //        ChangeAnimationState(Hide);
+    //    }
+    //}
+    //private void OnCollision{
+    //Enter2D(Collision2D collision)
     //{
     //    Debug.Log("111" + collision.collider.gameObject.name);
     //}
