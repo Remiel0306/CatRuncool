@@ -9,8 +9,9 @@ namespace remiel
 {
     public class Right : MonoBehaviour
     {
-        //[SerializeField] GameObject[] styles;
+        [SerializeField] GameObject[] styles;
 
+        Collider2D End;
         // Start is called before the first frame update
         void Start()
         {
@@ -20,7 +21,7 @@ namespace remiel
         // Update is called once per frame
         void Update()
         {
-
+            OnTriggerEnter2D(End);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -29,18 +30,20 @@ namespace remiel
             {
                 Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
 
-                //    if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
-                //    {
-                //        GameObject clone = Instantiate(styles[Random.Range(0, styles.Length)], other.transform.position, Quaternion.identity);
-                //        //Score[] scores = clone.GetComponentsInChildren<Score>();
-                //        List<int> indexArray = new List<int>();
-                //        //while (true)
-                //        //{
-
-                //        //}
-                //    }
-                //}
-                //else
+                if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                {
+                    GameObject clone = Instantiate(styles[Random.Range(0, styles.Length)], other.transform.position, Quaternion.identity);
+                    List<int> indexArray = new List<int>();
+                }
+            }
+            else
+            {
+                
+            }        
+            
+            if(other.name == ("SpaceEnd"))
+            {
+                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
             }
         }
     }
