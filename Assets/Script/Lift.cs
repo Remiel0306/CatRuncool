@@ -23,9 +23,9 @@ public class Lift : MonoBehaviour
             Destroy(other.transform.root.gameObject);
         }
 
-        if (other.name == ("SpaceEnd"))
-        {
-            Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
-        }
+        //if (other.name == ("SpaceEnd"))
+        //{
+        //    Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
+        //}
     }
 }

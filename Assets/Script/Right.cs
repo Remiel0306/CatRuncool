@@ -11,17 +11,17 @@ namespace remiel
     {
         [SerializeField] GameObject[] styles;
 
-        Collider2D End;
+        Collider2D collider2D;
         // Start is called before the first frame update
         void Start()
         {
-
+            collider2D = GetComponent<Collider2D>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            OnTriggerEnter2D(End);
+            OnTriggerEnter2D(collider2D);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -36,15 +36,16 @@ namespace remiel
                     List<int> indexArray = new List<int>();
                 }
             }
+
+            if (other.name == ("SpaceEnd"))
+            {
+                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
+            }
+
             else
             {
                 
             }        
-            
-            if(other.name == ("SpaceEnd"))
-            {
-                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
-            }
         }
     }
 }
