@@ -37,15 +37,10 @@ namespace remiel
                 }
             }
 
-            if (other.name == ("SpaceEnd"))
-            {
-                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
-            }
-
-            else
-            {
-                
-            }        
+            //if (other.name == ("SpaceEnd"))
+            //{
+            //    Destroy(gameObject);
+            //}      
         }
     }
 }
