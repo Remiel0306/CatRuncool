@@ -36,15 +36,16 @@ namespace remiel
                     List<int> indexArray = new List<int>();
                 }
             }
+
+            if (other.name == ("SpaceEnd"))
+            {
+                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
+            }
+
             else
             {
                 
             }        
-            
-            if(other.name == ("SpaceEnd"))
-            {
-                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
-            }
         }
     }
 }
