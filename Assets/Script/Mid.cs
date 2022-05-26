@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using remiel;
+using UnityEngine;
 
-/// <summary>
-/// 讓軌道偵測後克隆
-/// </summary>
-namespace remiel
+
+namespace rmeiel
 {
-    public class Right : MonoBehaviour
+    /// <summary>
+    /// 當玩家通關
+    /// </summary>
+    public class Mid : MonoBehaviour
     {
-        [SerializeField] GameObject[] styles;
-        [SerializeField] GameObject mainCamera;
-
+        
+        public bool stop = false;
 
         Collider2D collider2D;
         // Start is called before the first frame update
@@ -29,10 +29,11 @@ namespace remiel
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            print("right" + other.name);
-            if (other.name == "End")
+            print("mid "+other.name);
+            if(other.name == "Finish")
             {
-                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
+                stop = true;
+                print("Touched");
             }
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using rmeiel;
 using UnityEngine;
 
 /// <summary>
@@ -11,31 +12,34 @@ namespace remiel
     {
         [SerializeField, Header("ªiªº¦ì¸m")] Transform traBo;
         [SerializeField] float speedScale = 1;
-
+        [SerializeField] Mid mid;
 
         // Start is called before the first frame update
         Vector3 lastPosition;
+        public void SetLastPosition(Vector3 s)
+        {
+            lastPosition = s;
+        }
         void Start()
         {
-            lastPosition = traBo.position;        
+            lastPosition = traBo.position;
+            //right = GetComponent<Collider2D>();
         }
 
         // Update is called once per frame
         void Update()
-        {      
-            Vector3 delta = traBo.position - lastPosition;
-            transform.Translate(delta.x * speedScale, 0, 0);
-            lastPosition = traBo.position;
-            
+        {
+            print(mid.stop.ToString());
+            if (mid.stop)
+            {
+                transform.Translate(0, 0, 0);
+            }
+            else
+            {
+                  Vector3 delta = traBo.position - lastPosition;
+                  transform.Translate(delta.x * speedScale, 0, 0);
+                  lastPosition = traBo.position;
+            }                 
         }
-
-        //private void OnTriggerEnter2D(Collider2D other)
-        //{
-        //    if (other.name == ("BO"))
-        //    {
-        //        bCamMove = true;
-        //        print("444");
-        //    }
-        //}
     }
 }
