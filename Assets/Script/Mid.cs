@@ -29,11 +29,9 @@ namespace rmeiel
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            print("mid "+other.name);
             if(other.name == "Finish")
             {
                 stop = true;
-                print("Touched");
             }
         }
     }

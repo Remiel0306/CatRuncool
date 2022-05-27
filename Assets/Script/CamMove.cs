@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using remiel;
 
-/// <summary>
-/// 讓軌道偵測後克隆
-/// </summary>
 namespace remiel
 {
-    public class Right : MonoBehaviour
+    public class CamMove : MonoBehaviour
     {
-        [SerializeField] GameObject[] styles;
-        [SerializeField] GameObject mainCamera;
-
+        public bool moveCam = false;
 
         Collider2D collider2D;
         // Start is called before the first frame update
@@ -29,9 +23,9 @@ namespace remiel
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.name == "End")
+            if(other.name == "BO")
             {
-                Instantiate(other.transform.root.gameObject, other.transform.position, Quaternion.identity);
+                moveCam = true;
             }
         }
     }

@@ -13,6 +13,7 @@ namespace remiel
         [SerializeField, Header("ªiªº¦ì¸m")] Transform traBo;
         [SerializeField] float speedScale = 1;
         [SerializeField] Mid mid;
+        [SerializeField] CamMove camMove;
 
         // Start is called before the first frame update
         Vector3 lastPosition;
@@ -29,7 +30,18 @@ namespace remiel
         // Update is called once per frame
         void Update()
         {
-            print(mid.stop.ToString());
+            if (camMove.moveCam)
+            {
+                Vector3 delta = traBo.position - lastPosition;
+                transform.Translate(delta.x * speedScale, 0, 0);
+                lastPosition = traBo.position;
+            }
+            else
+            {
+                transform.Translate(0, 0, 0);
+            }
+
+
             if (mid.stop)
             {
                 transform.Translate(0, 0, 0);
