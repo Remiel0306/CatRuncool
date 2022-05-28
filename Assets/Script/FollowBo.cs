@@ -30,18 +30,7 @@ namespace remiel
         // Update is called once per frame
         void Update()
         {
-            if (camMove.moveCam)
-            {
-                Vector3 delta = traBo.position - lastPosition;
-                transform.Translate(delta.x * speedScale, 0, 0);
-                lastPosition = traBo.position;
-            }
-            else
-            {
-                transform.Translate(0, 0, 0);
-            }
-
-
+            print(mid.stop.ToString());
             if (mid.stop)
             {
                 transform.Translate(0, 0, 0);

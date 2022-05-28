@@ -29,6 +29,7 @@ namespace rmeiel
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            print(other.name.ToString());
             if(other.name == "Finish")
             {
                 stop = true;
