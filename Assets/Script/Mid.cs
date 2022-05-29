@@ -11,7 +11,7 @@ namespace rmeiel
     /// </summary>
     public class Mid : MonoBehaviour
     {
-        
+
         public bool stop = false;
 
         Collider2D collider2D;

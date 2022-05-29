@@ -6,17 +6,16 @@ namespace remiel
 {
     public class CamMove : MonoBehaviour
     {
-        public bool moveCam = false;
+        public bool moveCam { get; set; }
 
         Collider2D collider2D;
-        // Start is called before the first frame update
-        void Start()
+
+        private void Start()
         {
             collider2D = GetComponent<Collider2D>();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             OnTriggerEnter2D(collider2D);
         }
@@ -28,5 +27,25 @@ namespace remiel
                 moveCam = true;
             }
         }
+        //Collider2D collider2D;
+        //// Start is called before the first frame update
+        //void Start()
+        //{
+        //    collider2D = GetComponent<Collider2D>();
+        //}
+
+        //// Update is called once per frame
+        //void Update()
+        //{
+        //    OnTriggerEnter2D(collider2D);
+        //}
+
+        //private void OnTriggerEnter2D(Collider2D other)
+        //{
+        //    if(other.name == "BO")
+        //    {
+        //        moveCam = true;
+        //    }
+        //}
     }
 }
