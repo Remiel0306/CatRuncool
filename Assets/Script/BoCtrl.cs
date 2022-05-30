@@ -21,5 +21,16 @@ namespace remiel
             animator = GetComponent<Animator>();
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if(other.collider.tag == "Spike")
+            {
+                Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    colliders[i].isTrigger = true;
+                }
+            }
+        }
     }
 }
