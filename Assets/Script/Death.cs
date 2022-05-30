@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Death : MonoBehaviour
 {
-    [SerializeField] Button repalyButton;
+    [SerializeField] Canvas finishPanel, deadPanel;
 
+    public bool showDeadPanel = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,13 @@ public class Death : MonoBehaviour
         if(other.name == ("BO"))
         {
             Time.timeScale = 0;
+        }
+
+        if (other.name == ("Down"))
+        {
+            print(other.name.ToString());
+            showDeadPanel = true;
+            
         }
     }
 }
