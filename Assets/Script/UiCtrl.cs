@@ -5,10 +5,16 @@ using UnityEngine;
 
 namespace remiel
 {
-    public class ButtonCtrl : MonoBehaviour
+    public class UiCtrl : MonoBehaviour
     {
         [SerializeField] Death death;
 
+        CanvasGroup canvas;
+
+        private void Start()
+        {
+            canvas = GetComponent<CanvasGroup>();
+        }
         private void Update()
         {
             
@@ -23,6 +29,14 @@ namespace remiel
             else
             {
                 gameObject.SetActive(false);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (death.showDeadPanel)
+            {
+                GetComponent<CanvasGroup>().interactable = false;
             }
         }
     }
