@@ -1,16 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Death : MonoBehaviour
+public class Finish : MonoBehaviour
 {
-    [SerializeField] GameObject deadPanel;
+    [SerializeField] GameObject finishPanel;
 
-    public bool showDeadPanel = false;
     Collider2D collider2D;
 
     // Start is called before the first frame update
@@ -25,13 +22,11 @@ public class Death : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.name == ("BO"))
+        if(other.name == "BO")
         {
-            Time.timeScale = 0;
-
-            deadPanel.SetActive(true);
+            finishPanel.SetActive(true);
         }
     }
 
