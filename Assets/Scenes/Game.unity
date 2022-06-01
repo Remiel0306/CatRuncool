@@ -376,8 +376,6 @@ GameObject:
   - component: {fileID: 69294390}
   - component: {fileID: 69294389}
   - component: {fileID: 69294388}
-  - component: {fileID: 69294393}
-  - component: {fileID: 69294392}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -468,34 +466,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &69294392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69294387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e8d09d6491d0c4e84743d65546915e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  death: {fileID: 1216264244}
---- !u!114 &69294393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69294387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b7364d25179d74cba6a5e2d8eb5642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finishPanel: {fileID: 0}
-  deadPanel: {fileID: 0}
-  showDeadPanel: 0
 --- !u!1 &135158834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,8 +3677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b7364d25179d74cba6a5e2d8eb5642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishPanel: {fileID: 0}
-  deadPanel: {fileID: 0}
+  deadPanel: {fileID: 751810986}
+  btnDeadReplay: {fileID: 1841902999}
   showDeadPanel: 0
 --- !u!1 &1225660520
 GameObject:
@@ -5473,7 +5443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1841903000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1216264244}
+        m_TargetAssemblyTypeName: Death, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1841903000
 MonoBehaviour:
   m_ObjectHideFlags: 0
