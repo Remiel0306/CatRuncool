@@ -24,7 +24,7 @@ namespace rmeiel
         // Update is called once per frame
         void Update()
         {
-            OnTriggerEnter2D(collider2D);
+            //OnTriggerEnter2D(collider2D);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

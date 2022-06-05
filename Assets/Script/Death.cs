@@ -29,7 +29,7 @@ public class Death : MonoBehaviour
     {
         if(other.name == ("BO"))
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             deadPanel.SetActive(true);
         }
