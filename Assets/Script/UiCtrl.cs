@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace remiel
 {
     public class UiCtrl : MonoBehaviour
     {
+        [SerializeField] Button btnPlay;
         [SerializeField] Button btnReplay;
 
         private void Start()
@@ -20,9 +22,9 @@ namespace remiel
             
         }
            
-        public void Replay()
+        public void ButtonClick()
         {
-            
+            SceneManager.LoadScene("Game");
         }
     }
 }
