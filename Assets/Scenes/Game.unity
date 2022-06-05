@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 14099466}
   - component: {fileID: 14099469}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnBackLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +310,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 14099467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 404799003}
+        m_TargetAssemblyTypeName: remiel.UiCtrl, Assembly-CSharp
+        m_MethodName: BtnBackLobbyClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &14099467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,6 +1299,58 @@ MonoBehaviour:
   - {fileID: 1506906266121922380, guid: a989c2df0e2a6be4386131c31f05a04f, type: 3}
   - {fileID: 5363282989655421677, guid: 65a16f025cc929b4bb45c39b380395a1, type: 3}
   mainCamera: {fileID: 519420028}
+--- !u!1 &404799002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404799004}
+  - component: {fileID: 404799003}
+  m_Layer: 0
+  m_Name: UiCtrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &404799003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404799002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e8d09d6491d0c4e84743d65546915e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnPlay: {fileID: 0}
+  btnExit: {fileID: 0}
+  btnSetting: {fileID: 0}
+  settingPanel: {fileID: 0}
+  firstPanel: {fileID: 0}
+  btnSettingPanelBack: {fileID: 0}
+  btnFinBackLobby: {fileID: 14099466}
+  btnDeadBackLobby: {fileID: 874793745}
+--- !u!4 &404799004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404799002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464959330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.289978, y: 0.4299999, z: -36.119995}
+  m_LocalPosition: {x: -2.2, y: 0.4299999, z: -36.119995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1562,7 +1626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520575393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.3, y: -3.326, z: 0}
+  m_LocalPosition: {x: -24.210022, y: -3.326, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2862,7 +2926,7 @@ GameObject:
   - component: {fileID: 874793745}
   - component: {fileID: 874793744}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnDeadBackLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2947,7 +3011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 874793746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 404799003}
+        m_TargetAssemblyTypeName: remiel.UiCtrl, Assembly-CSharp
+        m_MethodName: BtnDeadBackLobbyClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &874793746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5543,7 +5619,7 @@ GameObject:
   - component: {fileID: 1841902999}
   - component: {fileID: 1841902998}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnDeadReplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6064,7 +6140,7 @@ GameObject:
   - component: {fileID: 2122959013}
   - component: {fileID: 2122959016}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnReplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6341,7 +6417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098274558619699072, guid: 194482e8802c86b4193449efad88a191, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.52
+      value: -3.33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194482e8802c86b4193449efad88a191, type: 3}
