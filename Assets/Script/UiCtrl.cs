@@ -18,6 +18,7 @@ namespace remiel
         [SerializeField] Button btnSettingPanelBack;
         [SerializeField] Button btnFinBackLobby;
         [SerializeField] Button btnDeadBackLobby;
+        [SerializeField] Button btnGameBackLobby;
 
         private void Start()
         {
