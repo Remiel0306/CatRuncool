@@ -16,6 +16,8 @@ public class Death : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+
         collider2D = GetComponent<Collider2D>();
     }
 
@@ -29,7 +31,7 @@ public class Death : MonoBehaviour
     {
         if(other.name == ("BO"))
         {
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
 
             deadPanel.SetActive(true);
         }
